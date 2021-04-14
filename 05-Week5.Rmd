@@ -1,0 +1,10 @@
+# Week 5 Unsupervised Learning
+
+## K Means
+
+Scikit K means page: https://scikit-learn.org/stable/modules/generated/sklearn.cluster.k_means.html?highlight=k%20means#sklearn.cluster.k_means
+
+
+## Principal Component Analysis (PCA)
+
+Sci-kit PCA page: https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html?highlight=pca#sklearn.decomposition.PCA

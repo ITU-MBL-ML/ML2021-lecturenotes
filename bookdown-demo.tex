@@ -1,40 +1,56 @@
-\documentclass[]{book}
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-\else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
-\usepackage[unicode=true]{hyperref}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-            pdftitle={MBL549 Machine Learning in Architecture},
-            pdfauthor={Özgün Balaban},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
-\usepackage{natbib}
-\bibliographystyle{apalike}
+  pdftitle={MBL549 Machine Learning in Architecture},
+  pdfauthor={Özgün Balaban},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{longtable,booktabs}
-% Fix footnotes in tables (requires footnote package)
-\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
-\usepackage{graphicx,grffile}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -43,31 +59,14 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-
-% set default figure placement to htbp
+% Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
 \usepackage{booktabs}
 \usepackage{amsthm}
 \makeatletter
@@ -76,6 +75,11 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
 
 \title{MBL549 Machine Learning in Architecture}
 \author{Özgün Balaban}
@@ -88,54 +92,57 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter{Syllabus}\label{intro}
+\hypertarget{intro}{%
+\chapter{Syllabus}\label{intro}}
 
-\section{Class Schedule}\label{class-schedule}
+\hypertarget{class-schedule}{%
+\section{Class Schedule}\label{class-schedule}}
 
-\textbf{Spring 2020} Tuesday 13:30-1630
+\textbf{Spring 2021}
+Thursday 13:30-1630
 
-\section{Content}\label{content}
+\hypertarget{content}{%
+\section{Content}\label{content}}
 
-The course is an introduction to Machine Learning methods with examples
-from architectural design and creative coding. The course follows a
-hands on approach with many examples that will be developed during the
-course. The course includes topics from machine learning such as linear
-regression, unsupervised learning, supervised learning, reinforcement
-learning and finally neural networks. \#\# Aims To have students acquire
-practical knowledge on the tools of machine learning and different
-methodologies. To have students knowledge of applying these techniques
-to creative design process.
+The course is an introduction to \emph{Machine Learning} methods with examples from \emph{architectural design and creative coding}. The course follows a hands on approach with many examples that will be developed during the course. The course includes topics from machine learning such as linear regression, unsupervised learning, supervised learning, reinforcement learning and finally neural networks.
 
-\section{Conduct}\label{conduct}
+\hypertarget{aims}{%
+\section{Aims}\label{aims}}
 
-The first half of the term includes introduction to the various machine
-learning topics. In this phase there will be practical coding sessions
-and some assignments which will be graded. In the second half of the
-term we will focus on a group project which will be developed using
-neural networks.
+To have students acquire practical knowledge on the tools of machine learning and different methodologies. To have students knowledge of applying these techniques to creative design process.
 
-\section{Assessment}\label{assessment}
+\hypertarget{conduct}{%
+\section{Conduct}\label{conduct}}
 
-The grading for the course is as follows: hands-on practices, 50\%;
-final group project 50\%.
+The first half of the term includes introduction to the various machine learning topics. In this phase there will be practical coding sessions and some assignments which will be graded. In the second half of the term we will focus on a group project which will be developed using neural networks.
+The grading for the course is as follows: attendance and in-class participation in coding challenges 20\%; hands-on practices, 20\%; final project presentation by group (or solo if prefered) 60\%.
 
-\subsection{Assignments}\label{assignments}
+\hypertarget{assessment}{%
+\section{Assessment}\label{assessment}}
+
+coding challenges 20\%; hands-on practices, 20\%; final project presentation by group (or solo if prefered) 60\%.
+
+\hypertarget{assignments}{%
+\subsection{Assignments}\label{assignments}}
+
+Assignment 1
+
+\hypertarget{final-project}{%
+\subsection{Final Project}\label{final-project}}
 
 TBA
 
-\subsection{Final Project}\label{final-project}
-
-TBA
-
-\section{Software}\label{software}
+\hypertarget{software}{%
+\section{Software}\label{software}}
 
 We will use Python in an Anaconda environment.
 
-\section{Outline}\label{outline}
+\hypertarget{outline}{%
+\section{Outline}\label{outline}}
 
 \textbf{Week 1} Introduction
 
-\textbf{Week 2} Refresher on Python
+\textbf{Week 2} Version Control - Python Refresher
 
 \textbf{Week 3} Data scraping \& Linear Regression
 
@@ -163,55 +170,103 @@ We will use Python in an Anaconda environment.
 
 \textbf{Week 15} Projects
 
-\chapter{Week 1}\label{week-1}
+\hypertarget{week-1}{%
+\chapter{Week 1}\label{week-1}}
 
-In the first week we had a talk about the course syllabus and discussed
-about Machine Learning examples.
+In the first week we had a talk about the course syllabus and discussed about Machine Learning examples.
 
-For the second week we will do a refresher on Python. Please bring your
-laptops and install Anaconda with Python 3.7.
+\hypertarget{week-2}{%
+\chapter{Week 2}\label{week-2}}
 
-\section{Install Anaconda}\label{install-anaconda}
+In the second week we discussed version control using Github and had a refresher about Python programming.
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\hypertarget{version-control}{%
+\section{Version Control}\label{version-control}}
+
+\hypertarget{what-is-version-control}{%
+\subsection{What is Version Control}\label{what-is-version-control}}
+
+{[}\url{https://en.wikipedia.org/wiki/Version_control}{]}
+
+Most famous VCS are;
+
+Git
+Subversion
+Mercurial
+
+In this course, we will use Git.
+
+\hypertarget{terminology}{%
+\subsubsection{Terminology}\label{terminology}}
+
+\emph{Version Control System / Source Code Manager}
+
+Git is a SCM or VCS that stores the status of the files for us.
+
+\emph{Commit}
+When a commit is made Git stores the contents of all the files that are in the staging area. It is like saving in a game.
+
+\emph{Repository / repo}
+A repository is a directory that contains your project.
+
+\emph{Working Directory}
+Working Directory is the directory that is configured in the init for the repo.
+
+\emph{Checkout}
+A checkout is when content in the repository has been copied to the Working Directory.
+
+\emph{Staging Area / Staging Index / Index}
+A file in the Git directory that stores information about what will go into your next commit. You can think of the staging area as a prep table where Git will take the next commit. Files on the Staging Index are poised to be added to the repository.
+
+\emph{SHA}
+A SHA is basically an ID number for each commit. Here's what a commit's SHA might look like: e2adf8ae3e2e4ed40add75cc44cf9d0a869afeb6.
+
+It is a 40-character string composed of characters (0--9 and a--f) and calculated based on the contents of a file or directory structure in Git. ``SHA'' is shorthand for ``Secure Hash Algorithm''. If you're interested in learning about hashes, check out our Intro to Computer Science course.
+
+\emph{Branch}
+A branch is when a new line of development is created that diverges from the main line of development. This alternative line of development can continue without altering the main line.
+
+\hypertarget{create-a-git-repo}{%
+\subsection{Create a Git Repo}\label{create-a-git-repo}}
+
+\hypertarget{add-commits-to-a-repo}{%
+\subsection{Add Commits to a Repo}\label{add-commits-to-a-repo}}
+
+\hypertarget{branching-and-merging}{%
+\subsection{Branching and Merging}\label{branching-and-merging}}
+
+\hypertarget{repos-history}{%
+\subsection{Repo's History}\label{repos-history}}
+
+\hypertarget{undoing-changes}{%
+\subsection{Undoing Changes}\label{undoing-changes}}
+
+Modifying the Last Commit
+
+\texttt{git\ commit\ -\/-amend}
+
+Reverting a Commit
+
+\texttt{git\ revert\ \textless{}SHA\ of\ a\ commit\textgreater{}}
+
+Deleting a Commit
+can be dangerous
+\texttt{git\ reset}
+
+Optional readings are below:
+
+\begin{itemize}
 \tightlist
 \item
-  Install Anaconda\\
-  \url{https://www.anaconda.com/distribution/\#download-section}
-\item
-  Click on start menu and choose anaconda prompt'(windows) OR run
-  terminal (osx/ubuntu)
-\item
-  Create a virtual environment (e.g. `mbl-ml', could be any name you
-  like):\\
-  • \textgreater{} conda create -n mbl-ml python=3.7 ipykernel
-\item
-  Activate the virtual environment:\\
-  • \textgreater{} source activate mbl-ml
-\item
-  Install dependencies:\\
-  • Change directory to where the given file (requirements.txt)
-  resides.\\
-  • \textgreater{} cd (just drag your folder into the cmd/terminal)\\
-  • \textgreater{} pip install -r requirements.txt\\
-\item
-  Make kernel accessible in jupyter notebook:\\
-  • \textgreater{} python -m ipykernel install --user --name mbl-ml\\
-\item
-  Go to the directory that you would like to save your notebooks •
-  \textgreater{} cd (just drag your folder into the cmd/terminal)
-\item
-  Run jupyter notebook: • \textgreater{} jupyter notebook
-\item
-  Create new file and set kernel to `mbl-ml'
-\item
-  To shut down jupyter: • Press cmd `C' or \textgreater{} ctrl `C' at
-  the terminal/cmd prompt
-\item
-  To deactivate virtual environment: • \textgreater{} conda deactivate
-\end{enumerate}
+  Reading:
 
-\bibliography{book.bib,packages.bib}
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{https://peerj.com/preprints/3159/}{Excuse me, do you have a moment to talk about version control?}
+  \end{itemize}
+\end{itemize}
+
+  \bibliography{book.bib,packages.bib}
 
 \end{document}

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Week 1 | MBL549 Machine Learning in Architecture</title>
+  <title>Chapter 5 Week 4 | MBL549 Machine Learning in Architecture</title>
   <meta name="description" content="MBL549 Syllabus" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Week 1 | MBL549 Machine Learning in Architecture" />
+  <meta property="og:title" content="Chapter 5 Week 4 | MBL549 Machine Learning in Architecture" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Week 1 | MBL549 Machine Learning in Architecture" />
+  <meta name="twitter:title" content="Chapter 5 Week 4 | MBL549 Machine Learning in Architecture" />
   
   <meta name="twitter:description" content="MBL549 Syllabus" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="week-2.html"/>
+<link rel="prev" href="week-3.html"/>
+<link rel="next" href="week-5-unsupervised-learning.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -96,22 +96,18 @@
 <li class="chapter" data-level="3.1.6" data-path="week-2.html"><a href="week-2.html#undoing-changes"><i class="fa fa-check"></i><b>3.1.6</b> Undoing Changes</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="week-3-python-refresher.html"><a href="week-3-python-refresher.html"><i class="fa fa-check"></i><b>4</b> Week 3 Python Refresher</a></li>
-<li class="chapter" data-level="5" data-path="week-4-python-refresher-cont.html"><a href="week-4-python-refresher-cont.html"><i class="fa fa-check"></i><b>5</b> Week 4 Python Refresher - cont</a>
+<li class="chapter" data-level="4" data-path="week-3.html"><a href="week-3.html"><i class="fa fa-check"></i><b>4</b> Week 3</a></li>
+<li class="chapter" data-level="5" data-path="week-4.html"><a href="week-4.html"><i class="fa fa-check"></i><b>5</b> Week 4</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="week-4-python-refresher-cont.html"><a href="week-4-python-refresher-cont.html#numpy-refresher"><i class="fa fa-check"></i><b>5.1</b> Numpy Refresher</a></li>
-<li class="chapter" data-level="5.2" data-path="week-4-python-refresher-cont.html"><a href="week-4-python-refresher-cont.html#pandas-refresher"><i class="fa fa-check"></i><b>5.2</b> Pandas Refresher</a></li>
-<li class="chapter" data-level="5.3" data-path="week-4-python-refresher-cont.html"><a href="week-4-python-refresher-cont.html#linear-regression"><i class="fa fa-check"></i><b>5.3</b> Linear Regression</a></li>
+<li class="chapter" data-level="5.1" data-path="week-4.html"><a href="week-4.html#numpy-refresher"><i class="fa fa-check"></i><b>5.1</b> Numpy Refresher</a></li>
+<li class="chapter" data-level="5.2" data-path="week-4.html"><a href="week-4.html#section"><i class="fa fa-check"></i><b>5.2</b> </a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="week-5-unsupervised-learning.html"><a href="week-5-unsupervised-learning.html"><i class="fa fa-check"></i><b>6</b> Week 5 Unsupervised Learning</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="week-5-unsupervised-learning.html"><a href="week-5-unsupervised-learning.html#k-means"><i class="fa fa-check"></i><b>6.1</b> K Means</a></li>
 <li class="chapter" data-level="6.2" data-path="week-5-unsupervised-learning.html"><a href="week-5-unsupervised-learning.html#principal-component-analysis-pca"><i class="fa fa-check"></i><b>6.2</b> Principal Component Analysis (PCA)</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="week-6-creative-machine-learning.html"><a href="week-6-creative-machine-learning.html"><i class="fa fa-check"></i><b>7</b> Week 6 Creative Machine Learning</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="week-6-creative-machine-learning.html"><a href="week-6-creative-machine-learning.html#project-brief"><i class="fa fa-check"></i><b>7.1</b> Project Brief</a></li>
-</ul></li>
+<li class="chapter" data-level="7" data-path="week-6-creative-machine-learning.html"><a href="week-6-creative-machine-learning.html"><i class="fa fa-check"></i><b>7</b> Week 6 Creative Machine Learning</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -132,18 +128,23 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="week-1" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Week 1</h1>
-<p>In the first week we had a talk about the course syllabus and discussed about Machine Learning examples.</p>
+<div id="week-4" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Week 4</h1>
+<div id="numpy-refresher" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Numpy Refresher</h2>
+</div>
+<div id="section" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> </h2>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-5-unsupervised-learning.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -174,7 +175,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-intro.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-Week4.Rmd",
 "text": "Edit"
 },
 "history": {

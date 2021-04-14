@@ -1,0 +1,92 @@
+# Week 6 Creative Machine Learning
+
+Examples discussed in the lecture:
+
+
+* https://monoskop.org/Neural_aesthetics
+
+* Going Deeper into Neural Networks
+https://ai.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html
+
+* A Neural Algorithm of Artistic Style
+
+* Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks. 
+
+* https://ami.withgoogle.com/
+
+* https://medium.com/artists-and-machine-intelligence
+
+* https://grayarea.org/event/deepdream-the-art-of-neural-networks/
+
+* https://experiments.withgoogle.com/collection/ai
+
+* http://nips4creativity.com/
+
+* http://www.aiartonline.com/
+
+* https://vimeo.com/240667014
+
+* https://vimeo.com/338726032
+
+* http://www.aiartonline.com/art/robbie-barrat/
+
+* Suggestive Drawing Among Human and Artificial Intelligences
+
+* https://towardsdatascience.com/gan-loci-e2bbd1b4926f
+
+* Approach to the Extraction of Design Features of Interior Design Elements Using Image Recognition Technique
+
+* DANIEL: A Deep Architecture for Automatic Analysis and Retrieval of Building Floor Plans
+
+* Architectural Drawings Recognition and Generation through Machine Learning
+
+* Drawing with Bots: Human-computer Collaborative Drawing Experiments, in: Learning, Prototyping and Adapting
+
+* https://towardsdatascience.com/ai-architecture-f9d78c6958e0
+
+* Enabling Alternative Architectures: Collaborative Frameworks for Participatory Design
+
+* Deep Form Finding - Using Variational Autoencoders for deep form finding of structural typologies
+
+* http://fresheyes.ksteinfe.com/explorations.html
+
+* Machinic Design Inference: from Pokémon to Architecture - A Probabilistic Machine Learning Model for Generative Design using Game Levels Abstractions
+
+* Inference Design Machine: “Infinite” & “Recombinant” Series
+
+* Voxel Sampling for Architectural Design Synthesis
+
+## Project Brief
+
+the formal discovery of an architectural concept through the
+curation of a dataset and the training of a machine learning model
+for generating design prototypes
+
+
+
+1. What is the architectural concept to be learnt formally?
+2. What are the data samples that might implicitly represent such a concept?
+3. How could the samples be collected/created in large quantities?
+4. How might each sample be numerically encoded for our machine learning model?
+5. What would be generated from such a model?
+6. How would a newly generated digital sample be physically formed?
+7. How might the work benefit design thinking and production?
+
+Examples:
+
+A trained machine learning model that could generate new samples
+of _______?
+
+
+…of Mies’Barcelona Pavilions / Gropius’ Dessau Bauhaus / Combinations…
+(as a specific building)
+…of Housing / Mosques…
+(as a typology)
+…of Staircases / Columns / Lifts…
+(as an architectural element)
+…of Zaha’s Style / Safranbolu Vernacular…
+(as a style)
+…of openness / warmth…
+(as a spatial perception)
+
+
